@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie-edge">
+  <title>Jekyll Website</title>
+  <link rel="stylesheet" type="text/css" href="/assets/css/main.css">
+</head>
+<body>
+
+  <div class="title-area">
+    <img src={{ "/assets/images/logo.png" | relative_url }} class="logo">
+    <h1 class="title">{{page.title}}</h1>
+    <p class="sub-title">{{page.description}}</p>
+  </div>
+
+  {% if page.img == '1px.gif' %}
+  <img src={{site.baseurl}}/assets/images/{{page.img}} | relative_url }} class="img-none">
+  {% else %}
+  <img src={{site.baseurl}}/assets/images/{{page.img}} | relative_url }} class="img-wide">
+  {% endif %}
+  
+
+  {{content}}
+
+  <div class="footer-area">
+    <p>Perhaps a bit too flashy for a footer, but it'll do.</p>
+  </div>
+  
+</body>
+</html>
